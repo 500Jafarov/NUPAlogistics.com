@@ -1,0 +1,22 @@
+{
+  "welcome": "Welcome to NUPA Logistics",
+  "description": "Global logistics solutions for your business",
+  "heroTag": "Global Reach, Local Expertise",
+  "heroDesc": "Reliable Container Transportation Worldwide. Elevate your supply chain with our seamless shipping solutions.",
+  "contactUs": "Contact Us",
+  "aboutUs": "About Us",
+  "aboutText": "specializes in container transportation, providing reliable and efficient logistics solutions across international routes. Our focus is speed, safety, and transparency. Whether moving goods locally or across continents, we ensure your cargo arrives on time and in perfect condition.",
+  "ourServices": "Our Services",
+  "servContainer": "Container Transportation",
+  "servContainerDesc": "Secure and timely movement of your containerized cargo.",
+  "servFreight": "Freight Forwarding",
+  "servFreightDesc": "End-to-end management of your international shipping needs.",
+  "servPort": "Port Operations",
+  "servPortDesc": "Efficient handling and processing at major global ports.",
+  "servShipping": "International Shipping",
+  "servShippingDesc": "Connecting markets through our reliable ocean freight network.",
+  "getInTouch": "Get in Touch",
+  "getInTouchDesc": "We are here to handle your logistics needs.",
+  "hq": "Headquarters",
+  "rights": "All rights reserved."
+}

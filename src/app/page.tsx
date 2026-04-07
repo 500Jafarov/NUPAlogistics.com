@@ -1,6 +1,8 @@
 "use client";
 
 import { useState } from "react";
+import { useTranslation } from 'next-i18next';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 import { Phone, Mail, MapPin, Anchor, Truck, Ship, Globe2 } from "lucide-react";
 
@@ -25,7 +27,7 @@ const InstagramIcon = (props: React.SVGProps<SVGSVGElement>) => (
 );
 
 // Dictionary for 3 languages
-const dict = {
+// Removed dict, using i18n translations
   en: {
     heroTag: "Global Reach, Local Expertise",
     heroDesc: "Reliable Container Transportation Worldwide. Elevate your supply chain with our seamless shipping solutions.",
@@ -85,15 +87,8 @@ const dict = {
     getInTouchDesc: "Lojistik ihtiyaçlarınızı karşılamak için buradayız.",
     hq: "Merkez Ofis",
     rights: "Tüm hakları saklıdır.",
-  }
-};
-
-type Lang = "en" | "az" | "tr";
-
 export default function Home() {
-  const [lang, setLang] = useState<Lang>("az");
-  
-  const t = dict[lang];
+  const { t } = useTranslation('common');
 
   return (
     <main className="min-h-screen text-neutral-200 font-sans selection:bg-sky-500/30">
