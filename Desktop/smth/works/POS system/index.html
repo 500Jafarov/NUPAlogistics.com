@@ -6603,13 +6603,23 @@ function AppShell() {
   const [pinTarget, setPinTarget] = useState(null);
   const [pinValue, setPinValue] = useState('');
   const [pinError, setPinError] = useState(false);
+  const CHANGELOG_DATE = '2026-05-04';
+  const [showChangelog, setShowChangelog] = useState(() => {
+    return localStorage.getItem('changelog_seen') !== CHANGELOG_DATE;
+  });
+
   const isAdmin = currentUser?.role === 'admin';
+
+  useEffect(() => {
+    if (!isAdmin && !['pos','sales'].includes(page)) setPage('pos');
+  }, [isAdmin]);
 
   if (!authReady) return React.createElement('div', {
     style: { display: 'flex', alignItems: 'center', justifyContent: 'center',
              height: '100vh', background: 'var(--bg)', color: 'var(--accent)',
              fontFamily: 'var(--mono)', fontSize: 14, letterSpacing: '0.05em' }
   }, '⬡  MarketPOS yükleniyor...');
+
   const cur = settings?.currency || '₼';
   const PIN_PAGES = ['dashboard', 'reports'];
   const CORRECT_PIN = '1701';
@@ -6636,9 +6646,10 @@ function AppShell() {
     }
   };
 
-  useEffect(() => {
-    if (!isAdmin && !['pos','sales'].includes(page)) setPage('pos');
-  }, [isAdmin]);
+  const closeChangelog = () => {
+    localStorage.setItem('changelog_seen', CHANGELOG_DATE);
+    setShowChangelog(false);
+  };
 
   // Today's stats for topbar
   const today = new Date(); today.setHours(0,0,0,0);
@@ -6648,7 +6659,6 @@ function AppShell() {
 
   if (!currentUser) return React.createElement(LoginPage);
 
-  const CHANGELOG_DATE = '2026-05-04';
   const CHANGELOG = [
     { icon: '🐛', text: 'Satış zamanı anbar stoku azalması səhvi düzəldildi' },
     { icon: '🛒', text: 'Satış yerinə qayıdanda seçilmiş məhsullar saxlanılır + üzən səbət düyməsi əlavə edildi' },
@@ -6656,13 +6666,6 @@ function AppShell() {
     { icon: '📊', text: 'Anbar səhifəsində məhsullar stoka görə çoxdan aza avtomatik sıralanır' },
     { icon: '🔄', text: 'Transfer tarixçəsi artıq Firebase-də saxlanılır, bütün cihazlarda görünür' },
   ];
-  const [showChangelog, setShowChangelog] = useState(() => {
-    return localStorage.getItem('changelog_seen') !== CHANGELOG_DATE;
-  });
-  const closeChangelog = () => {
-    localStorage.setItem('changelog_seen', CHANGELOG_DATE);
-    setShowChangelog(false);
-  };
 
   const pages = {
     dashboard: isAdmin ? React.createElement(Dashboard, { setPage: navigate }) : React.createElement(POSPage),
