@@ -6597,18 +6597,19 @@ React.createElement('button', { className: 'btn btn-primary', onClick: handleBac
 function AppShell() {
   const { currentUser, sales, returns, settings, authReady, cart } = useApp();
 
+  const [page, setPage] = useState('dashboard');
+  const [showEOD, setShowEOD] = useState(false);
+  const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [pinTarget, setPinTarget] = useState(null);
+  const [pinValue, setPinValue] = useState('');
+  const [pinError, setPinError] = useState(false);
+  const isAdmin = currentUser?.role === 'admin';
+
   if (!authReady) return React.createElement('div', {
     style: { display: 'flex', alignItems: 'center', justifyContent: 'center',
              height: '100vh', background: 'var(--bg)', color: 'var(--accent)',
              fontFamily: 'var(--mono)', fontSize: 14, letterSpacing: '0.05em' }
   }, '⬡  MarketPOS yükleniyor...');
-  const [page, setPage] = useState('pos');
-  const [showEOD, setShowEOD] = useState(false);
-  const [sidebarOpen, setSidebarOpen] = useState(false);
-  const [pinTarget, setPinTarget] = useState(null); // pending page waiting for PIN
-  const [pinValue, setPinValue] = useState('');
-  const [pinError, setPinError] = useState(false);
-  const isAdmin = currentUser?.role === 'admin';
   const cur = settings?.currency || '₼';
   const PIN_PAGES = ['dashboard', 'reports'];
   const CORRECT_PIN = '1701';
