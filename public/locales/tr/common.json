@@ -1,0 +1,22 @@
+{
+  "welcome": "NUPA Lojistik'e Hoş Geldiniz",
+  "description": "İşletmeniz için küresel lojistik çözümleri",
+  "heroTag": "Küresel Erişim, Yerel Uzmanlık",
+  "heroDesc": "Dünya çapında güvenilir konteyner taşımacılığı. Kesintisiz lojistik çözümlerimizle tedarik zincirinizi güçlendirin.",
+  "contactUs": "İletişim",
+  "aboutUs": "Hakkımızda",
+  "aboutText": "konteyner taşımacılığında uzmanlaşmıştır ve uluslararası rotalarda güvenilir, verimli lojistik çözümler sunmaktadır. Odak noktamız hız, güvenlik ve şeffaflıktır. Yükünüzün hem yerel hem de kıtalararası ölçekte zamanında ve sorunsuz teslim edilmesini sağlıyoruz.",
+  "ourServices": "Hizmetlerimiz",
+  "servContainer": "Konteyner Taşımacılığı",
+  "servContainerDesc": "Konteyner yüklerinizin güvenli ve zamanında taşınması.",
+  "servFreight": "Navlun Taşımacılığı",
+  "servFreightDesc": "Uluslararası nakliye ihtiyaçlarınızın uçtan uca yönetimi.",
+  "servPort": "Liman Operasyonları",
+  "servPortDesc": "Büyük küresel limanlarda verimli işleme ve operasyon yönetimi.",
+  "servShipping": "Uluslararası Nakliye",
+  "servShippingDesc": "Güvenilir okyanus nakliye ağımız aracılığıyla pazarları birbirine bağlıyoruz.",
+  "getInTouch": "Bizimle İletişime Geçin",
+  "getInTouchDesc": "Lojistik ihtiyaçlarınızı karşılamak için buradayız.",
+  "hq": "Merkez Ofis",
+  "rights": "Tüm hakları saklıdır."
+}
